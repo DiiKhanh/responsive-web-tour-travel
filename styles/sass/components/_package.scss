@@ -1,0 +1,66 @@
+.package {
+  &__text {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    @include viewPC {
+      max-width: 400px;
+      margin: 0 auto;
+      font-size: 2rem;
+    }
+  }
+
+  &__content {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    align-items: center;
+    gap: 3rem;
+  }
+  &__box {
+    cursor: pointer;
+  }
+
+  &__thumnail {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    will-change: filter;
+    &:hover {
+      filter: brightness(100%) hue-rotate(45deg);
+      transform: scale(1.04);
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    h3 {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: $bg-color;
+      font-size: 20px;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  &__location {
+    h4 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__star {
+    i {
+      color: $main-color;
+      font-size: 20px;
+    }
+  }
+}

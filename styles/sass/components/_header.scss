@@ -1,0 +1,128 @@
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba($color: #fff, $alpha: 0.5);
+  transition: $smooth;
+  display: none;
+  &.showoverlay {
+    display: initial;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+
+  padding: 12px 3%;
+
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: $smooth;
+
+  @include viewPC {
+    padding: 24px 18%;
+  }
+
+  &.sticky {
+    padding: 8px 3%;
+    background: $bg-color;
+    box-shadow: rgb(33 35 38 / 10%) 0px 20px 20px -10px;
+    @include viewPC {
+      padding: 8px 18%;
+      .header__link a {
+        color: $text-color;
+        &:hover {
+          background: $main-color;
+          color: $bg-color;
+        }
+      }
+    }
+    .header__logo,
+    #header__menu {
+      color: $text-color;
+    }
+  }
+
+  &__logo {
+    color: $bg-color;
+    font-size: $h2-font-m;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100vh;
+    background-color: #1067cc;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1001;
+    transition: $smooth;
+    opacity: 0;
+    transform: translateX(100%);
+    @include viewPC {
+      position: initial;
+      top: initial;
+      left: initial;
+      width: initial;
+      height: initial;
+      opacity: 1;
+      transform: translateX(0);
+      flex-direction: row;
+      justify-content: flex-end;
+      background-color: transparent;
+    }
+    &.showlinks {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  &__link {
+    padding: 1em 2.2em;
+    @include viewPC {
+      padding: 0;
+    }
+    a {
+      display: inline-block;
+      color: $bg-color;
+      font-size: 1.2rem;
+      text-transform: capitalize;
+      font-weight: 500;
+      border-radius: 0.5rem;
+      transition: $smooth;
+      padding: 10px 22px;
+      @include viewPC {
+        font-size: 1.3rem;
+      }
+      &:hover {
+        background: $bg-color;
+        color: $text-color;
+      }
+    }
+  }
+}
+
+#header__menu {
+  font-size: 45px;
+  transition: $smooth;
+  z-index: 1001;
+  color: $bg-color;
+  @include viewPC {
+    display: none;
+  }
+}

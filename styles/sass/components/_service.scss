@@ -1,0 +1,50 @@
+.service {
+  &__text {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+    gap: 5rem;
+    @include viewPC {
+      gap: 2rem;
+    }
+  }
+
+  &__box {
+    background: $bg-color;
+    border: 1px solid #f0eded;
+    border-radius: 10px;
+    transition: $smooth;
+    padding: 50px 20px;
+    cursor: pointer;
+
+    h4 {
+      text-transform: capitalize;
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+    p {
+      color: $second-color;
+    }
+    &:hover {
+      transform: scale(0.98) translateY(-5px);
+    }
+  }
+
+  &__img {
+    img {
+      height: 85px;
+      width: 85px;
+      background: $bg-color;
+      padding: 15px;
+      box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+      border-radius: 10px;
+    }
+  }
+}

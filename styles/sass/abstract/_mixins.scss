@@ -1,0 +1,7 @@
+$fullScreen: 62em;
+
+@mixin viewPC {
+  @media (min-width: #{$fullScreen}) {
+    @content;
+  }
+}

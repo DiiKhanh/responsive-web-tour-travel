@@ -1,0 +1,55 @@
+.newsletter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  @include viewPC {
+    text-align: initial;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__text {
+    h3 {
+      font-size: 2.2rem;
+    }
+    p {
+      color: $second-color;
+      margin: 20px 0;
+    }
+  }
+
+  &__form {
+    form {
+      position: relative;
+      width: 400px;
+      @include viewPC {
+        width: 450px;
+        max-width: 100%;
+      }
+      input:first-child {
+        display: inline-block;
+        width: 100%;
+        box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+        outline: none;
+        border: none;
+        border-radius: 15px;
+        padding: 20px 90px 20px 30px;
+      }
+      input:last-child {
+        position: absolute;
+        display: inline-block;
+
+        box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+        outline: none;
+        border: none;
+        border-radius: 15px;
+        padding: 18px 30px;
+        background-color: $main-color;
+        color: $bg-color;
+        top: 2px;
+        right: 2px;
+      }
+    }
+  }
+}

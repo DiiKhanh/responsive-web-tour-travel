@@ -1,0 +1,56 @@
+.destination {
+  &__text {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    @include viewPC {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 2rem;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, auto));
+    align-items: center;
+    gap: 3rem;
+    margin-top: 5rem;
+  }
+
+  &__box {
+    position: relative;
+    img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 15px;
+      filter: brightness(80%);
+      transition: all 0.3s cubic-bezier(0.495, 0.05, 0.55, 0.95);
+      will-change: filter;
+      &:hover {
+        filter: brightness(100%) hue-rotate(45deg);
+        transform: scale(1.04);
+        cursor: pointer;
+      }
+    }
+
+    h5 {
+      position: absolute;
+      bottom: 50px;
+      color: $bg-color;
+      left: 20px;
+      font-size: 24px;
+      font-weight: 500;
+    }
+    p {
+      position: absolute;
+      bottom: 20px;
+      color: $bg-color;
+      left: 20px;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 3px;
+    }
+  }
+}
